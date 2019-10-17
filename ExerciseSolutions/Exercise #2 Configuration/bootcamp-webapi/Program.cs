@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Steeltoe.Extensions.Configuration.ConfigServer;
 using Microsoft.Extensions.DependencyInjection;
+using Steeltoe.Extensions.Configuration.Placeholder;
+using Steeltoe.Extensions.Configuration.PlaceholderCore;
 
 namespace bootcamp_webapi
 {
@@ -25,6 +27,7 @@ namespace bootcamp_webapi
             WebHost.CreateDefaultBuilder(args)
                 .UseCloudFoundryHosting()
                 .AddConfigServer(GetLoggerFactory())
+                .AddPlaceholderResolver()
                 .UseStartup<Startup>();
 
         public static ILoggerFactory GetLoggerFactory()
