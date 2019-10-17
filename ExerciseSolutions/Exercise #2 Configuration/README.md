@@ -4,15 +4,15 @@ Spring Cloud Service with Credhub backed by git - SteelToe App.
 This project provide instructions to integrate Spring Cloud Services 3 with credhub backed by git for configurations
 
 
-1.  Install Spring Cloud Service Plugin on to the foundation.
+1.  Install Spring Cloud Service Plugin on to the foundation - Refer https://github.com/pivotal-cf/spring-cloud-services-cli-plugin
 
        $ cf install-plugin -r CF-Community "spring-cloud-services"
 
-2. Create a config server instance.
+2. Create a config server instance
 
        $ cf create-service p-config-server standard myConfigServer -c .\config.json
 
-3. Add a secret to Run time Credhub.
+3. Add a secret to Run time Credhub
 
       $ cf config-server-add-credhub-secret myConfigServer bootcamp-api-mak/development/master/mysecret '{"key": "BootCamp-cred111"}'
 
