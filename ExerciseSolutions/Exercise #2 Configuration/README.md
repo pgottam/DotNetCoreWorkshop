@@ -5,13 +5,17 @@ This project provide instructions to integrate Spring Cloud Services 3 with cred
 
 
 1.  Install Spring Cloud Service Plugin on to the foundation - Refer https://github.com/pivotal-cf/spring-cloud-services-cli-plugin
+
        $ cf install-plugin -r CF-Community "spring-cloud-services"
 
 2. Create a config server instance
+
        $ cf create-service p-config-server standard myConfigServer -c .\config.json
 
 3. Add a secret to Run time Credhub
+
       $ cf config-server-add-credhub-secret <configserverinstanceName> <appName>/<profile>/<label>/<secret> <Secret in JSON>
+
         For Eg. cf config-server-add-credhub-secret myConfigServer bootcamp-api-mak/development/master/mysecret '{"key": "BootCamp-cred111"}'
 
 4. Refer the secret "key" defined above in the JSON, in the application.properties as defined in your config repository.
