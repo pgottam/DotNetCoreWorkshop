@@ -14,7 +14,7 @@ This project provide instructions to integrate Spring Cloud Services 3 with cred
 
 3. Add a secret to Run time Credhub
 
-      $ cf config-server-add-credhub-secret <configserverinstanceName> <appName>/<profile>/<label>/<secret> <Secret in JSON>
+      $ cf config-server-add-credhub-secret CONFIGSERVERNAME APP_NAME/PROFILE/LABEL/SECRET SECRET_JSON
 
         For Eg. cf config-server-add-credhub-secret myConfigServer bootcamp-api-mak/development/master/mysecret '{"key": "BootCamp-cred111"}'
 
